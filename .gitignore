@@ -1,0 +1,10 @@
+.DS_Store
+
+# jvrck local testing 
+datafile
+
+# sample-data directory
+# ignore extracted shape files 
+# but not zip files that contain shape files 
+sample-data/*
+!sample-data/*.zip

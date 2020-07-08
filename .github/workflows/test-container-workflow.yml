@@ -1,0 +1,20 @@
+name: Test Container Build
+on:
+  push:
+    branches:
+      - '*'
+      - '!master'
+
+jobs:
+  Test-Container:
+    runs-on: ubuntu-latest
+
+    steps:
+        - name: Checkout code
+          uses: actions/checkout@v2
+
+        - name: Build Image
+          run: docker build . --file Dockerfile -t jvrck/shape2open:testing
+
+        - name: Run Tests on Image
+          run: docker run --entrypoint '/app/test.sh' -v $PWD/sample-data/:/data jvrck/shape2open:testing
