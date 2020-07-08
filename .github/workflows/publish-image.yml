@@ -5,9 +5,12 @@ on:
     types: [published]
 
 jobs:
-  build:
+  build-and-push:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
       - name: build-and-push
         uses: docker/build-push-action@v1
         with:
