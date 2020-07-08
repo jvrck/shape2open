@@ -26,5 +26,4 @@ jobs:
          username: ${{ secrets.DOCKER_USERNAME }}
          password: ${{ secrets.DOCKER_PASSWORD }}
          repository: jvrck/shape2open
-         tag: latest
-         push: true
+         tags: latest
